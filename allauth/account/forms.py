@@ -535,7 +535,7 @@ class ResetPasswordForm(forms.Form):
                     != AuthenticationMethod.EMAIL:
                 context['username'] = user_username(user)
             get_adapter(request).send_mail(
-                'account/email/password_reset_key',
+                app_settings.PASSWORD_RESET_EMAIL_TEMPLATE,
                 email,
                 context)
         return self.cleaned_data["email"]

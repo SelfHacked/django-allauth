@@ -315,6 +315,18 @@ class AppSettings(object):
                 ret = []
         return ret
 
+    @property
+    def PASSWORD_RESET_EMAIL_TEMPLATE(self):
+        return self._setting('PASSWORD_RESET_EMAIL_TEMPLATE', 'account/email/password_reset_key')
+
+    @property
+    def VERIFY_EMAIL_EMAIL_TEMPLATE(self):
+        return self._setting('VERIFY_EMAIL_EMAIL_TEMPLATE', 'account/email/email_confirmation')
+
+    @property
+    def SIGNUP_EMAIL_TEMPLATE(self):
+        return self._setting('SIGNUP_EMAIL_TEMPLATE', 'account/email/email_confirmation_signup')
+
 
 # Ugly? Guido recommends this himself ...
 # http://mail.python.org/pipermail/python-ideas/2012-May/014969.html
